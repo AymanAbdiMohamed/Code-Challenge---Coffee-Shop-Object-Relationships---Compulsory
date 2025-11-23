@@ -1,5 +1,6 @@
 from order import Order
 
+
 class Customer:
     all_customers = []
 
@@ -14,7 +15,9 @@ class Customer:
     @name.setter
     def name(self, value):
         if not isinstance(value, str) or not (1 <= len(value) <= 15):
-            raise ValueError("Customer name must be a string between 1 and 15 characters.")
+            raise ValueError(
+                "Customer name must be a string between 1 and 15 characters."
+            )
         self._name = value
 
     def orders(self):
@@ -24,6 +27,9 @@ class Customer:
         return list({order.coffee for order in self.orders()})
 
     def create_order(self, coffee, price):
+        # Import Coffee here to avoid circular import
+        from coffee import Coffee
+
         if not isinstance(coffee, Coffee):
             raise ValueError("Must provide a Coffee instance.")
         return Order(self, coffee, price)
@@ -33,7 +39,9 @@ class Customer:
         customer_spending = {}
         for order in Order.all_orders:
             if order.coffee == coffee:
-                customer_spending[order.customer] = customer_spending.get(order.customer, 0) + order.price
+                customer_spending[order.customer] = (
+                    customer_spending.get(order.customer, 0) + order.price
+                )
         if not customer_spending:
             return None
         return max(customer_spending, key=customer_spending.get)
