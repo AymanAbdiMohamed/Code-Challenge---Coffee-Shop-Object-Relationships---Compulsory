@@ -40,20 +40,11 @@ git clone https://github.com/AymanAbdiMohamed/Code-Challenge---Coffee-Shop-Objec
 cd Code-Challenge---Coffee-Shop-Object-Relationships---Compulsory
 ```
 
-2a. Using `pipenv` (uses `Pipfile`):
+2. Using `pipenv` (uses `Pipfile`):
 
 ```bash
 pipenv install --dev
 pipenv shell
-```
-
-2b. Or using a standard `venv` (portable):
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt || pip install black flake8 pytest
 ```
 
 Running tests
@@ -62,20 +53,6 @@ Run the test suite with `pytest`:
 
 ```bash
 pytest -q
-```
-
-Linting & Formatting
---------------------
-- Format code with `black`:
-
-```bash
-black . --exclude ".venv"
-```
-
-- Lint with `flake8` (example flags used in this repo):
-
-```bash
-flake8 . --exclude .venv --max-line-length=88
 ```
 
 Usage / Debug CLI
@@ -94,18 +71,3 @@ Project layout
 - `debug.py` — lightweight interactive CLI for manual testing
 - `tests/` — pytest tests (run with `pytest`)
 - `Pipfile` — optional pipenv dependencies
-
-Notes
------
-- The code uses in-memory lists (class attributes) to track all instances for simplicity; this is intentional for the exercise.
-- If you want, I can add a `pyproject.toml` or `setup.cfg` to centralize `black`/`flake8` configuration and add a GitHub Actions workflow to run tests and linters.
-
-Contact / Next steps
---------------------
-Tell me if you want me to:
-
-- Add CI (GitHub Actions) to run tests and linters automatically
-- Add a `requirements.txt` or `pyproject.toml`
-- Tighten typing with `mypy`
-
-Enjoy — and let me know what you'd like next.
