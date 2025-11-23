@@ -29,5 +29,5 @@ The project demonstrates class design, method implementation, data validation, a
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/AymanAbdiMohamed/Code-Challenge---Coffee-Shop-Object-Relationships---Compulsory
    cd coffee_shop
